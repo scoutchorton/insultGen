@@ -9,7 +9,7 @@ addEventListener('load', function (){
     }
     document.getElementsByTagName('button')[0].addEventListener('click', function(){
 		//https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript
-        document.getElementById('output').innerHTML+=`<a href="#" onclick="responsiveVoice.speak(this.innerHTML);console.log(this.innerHTML);">Why you ${insults[0][Math.floor(Math.random()*insults[0].length)]}, ${insults[1][Math.floor(Math.random()*insults[1].length)]}, ${insults[2][Math.floor(Math.random()*insults[2].length)]}!</a></br>`;
+        document.getElementById('output').innerHTML+=`<a onclick="responsiveVoice.speak(this.innerHTML);var t=this;this.classList.add('playing');setTimeout(function(){t.classList.remove('playing');},2500);">Why you ${insults[0][Math.floor(Math.random()*insults[0].length)]}, ${insults[1][Math.floor(Math.random()*insults[1].length)]}, ${insults[2][Math.floor(Math.random()*insults[2].length)]}!</a>`;
     });
     document.getElementsByTagName('button')[1].addEventListener('click', function (){
         for(var i=0;i<100;i++){
